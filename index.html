@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>URU Brewpark Listing</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+    <h2>URU Brewpark Listing</h2>
+    <div class="img-container">
+        <img id="previewImg" src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="URU Brewpark Restaurant Info" />
+        <div class="caption">
+            This image shows the URU Brewpark restaurant listing, including cuisine, rating, and payment details.
+        </div>
+    </div>
+    <!-- Modal for enlarged image -->
+    <div id="imgModal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img class="modal-content" id="modalImg" />
+    </div>
+    <script>
+        const modal = document.getElementById("imgModal");
+        const previewImg = document.getElementById("previewImg");
+        const modalImg = document.getElementById("modalImg");
+        previewImg.onclick = function(){
+            modal.style.display = "block";
+            modalImg.src = previewImg.src;
+        }
+        function closeModal() {
+            modal.style.display = "none";
+        }
+        modal.onclick = function(event) {
+            if (event.target === modal) {
+                closeModal();
+            }
+        }
+    </script>
+
+    <div class="card">
+        <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-4.0.3&auto=format&fit=crop&w=350&q=80" alt="Delicious dish from URU Brewpark">
+        <div class="card-title">
+            URU Brewpark
+            <span class="rating">4.3</span>
+        </div>
+        <div class="info">
+            Continental, Pizza, Asian, Desserts <br />
+            Cost ₹600 for one <br />
+            Min ₹50 • Up to 30 min <br />
+            766 votes | 512 reviews <br />
+            Accepts online payments only
+        </div>
+        <a href="#" class="order-btn">Order Online</a>
+    </div>
+
+</body>
+</html>
